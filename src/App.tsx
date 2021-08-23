@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {SelectInput} from 'vcc-ui';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [value, setValue] = React.useState('');
+
+    return (
+        <SelectInput value={value} onChange={(e: any) => setValue(e.target.value)}>
+            <option value="bilmodell">Bilmodell</option>
+            <option value="c30" disabled>
+                Volvo C30
+            </option>
+            <option value="c70">Volvo C70</option>
+            <option value="c90">Volvo C90</option>
+            <option value="c40">Volvo S40</option>
+            <option value="s60">Volvo S60</option>
+            <option value="s80">Volvo S80</option>
+            <option value="s90">Volvo S90</option>
+        </SelectInput>
+    );
 }
 
 export default App;

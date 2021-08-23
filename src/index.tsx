@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StyleProvider, ThemePicker } from 'vcc-ui';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <StyleProvider>
+          <ThemePicker variant='light'>
+              <App />
+          </ThemePicker>
+      </StyleProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
